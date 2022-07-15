@@ -3,7 +3,7 @@
 #X obj 196 15 control 2;
 #X obj 379 15 control 3;
 #X obj 566 15 control 4;
-#X obj 886 87 tgl 15 1 debug empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 886 87 tgl 15 1 debug empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 842 84 debug;
 #X text 773 109 total TVs;
@@ -15,7 +15,7 @@
 -262144 -1 -1 12 256;
 #X obj 847 162 nbx 5 14 0 500 0 1 totalYInches empty empty 0 -8 0 10
 -262144 -1 -1 16 256;
-#N canvas 652 1238 1190 793 videos 0;
+#N canvas 286 1222 1190 793 videos 1;
 #X msg 173 311 horse.mp4;
 #X obj 181 429 t b a;
 #X obj 226 519 s fileName;
@@ -27,9 +27,9 @@
 #X obj 226 487 symbol;
 #X obj 3 29 vradio 15 1 0 8 s-vidToPlay empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X obj 54 276 select 0 1 2 3 4 5 6;
+#X obj 117 234 select 0 1 2 3 4 5 6;
 #X text 23 41 horse;
-#X obj 605 272 select 0 1 2 3 4 5 6;
+#X obj 602 212 select 0 1 2 3 4 5 6;
 #X obj 598 401 soundfiler;
 #X msg 598 376 read -resize \$1 audioBuffer;
 #X obj 637 636 tabread4~ audioBuffer;
@@ -57,13 +57,13 @@
 #X obj 897 400 /;
 #X msg 485 513 0;
 #X obj 681 514 delay;
-#X msg 688 546 0;
+#X msg 697 563 0;
 #X obj 908 226 int;
 #X obj 908 198 + 0.5;
 #X msg 698 480 stop;
 #X obj 754 176 r fileName;
-#X obj 53 247 r s-vidToPlay;
-#X obj 605 241 r s-vidToPlay;
+#X obj 119 203 r s-vidToPlay;
+#X obj 602 156 r s-vidToPlay;
 #X obj 679 347 t a b b;
 #X msg 54 309 commercials.mp4;
 #X msg 558 303 commercials.wav;
@@ -72,6 +72,17 @@
 #X msg 677 301 horse.wav;
 #X obj 169 5 table audioBuffer;
 #X msg 1057 626 0 \, destroy;
+#X obj 602 184 int;
+#X obj 733 539 t b b;
+#X msg 420 165 \; pd dsp 1;
+#X obj 421 119 loadbang;
+#X text 22 56 coarse;
+#X text 24 71 medium;
+#X text 25 87 fine;
+#X msg 250 312 coarse.mp4;
+#X msg 282 340 medium.mp4;
+#X msg 294 375 fine.mp4;
+#X msg 681 260 coarse.wav;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 1 8 0;
@@ -79,8 +90,14 @@
 #X connect 8 0 2 0;
 #X connect 10 0 48 0;
 #X connect 10 1 0 0;
+#X connect 10 2 62 0;
+#X connect 10 3 63 0;
+#X connect 10 4 64 0;
 #X connect 12 0 49 0;
 #X connect 12 1 52 0;
+#X connect 12 2 65 0;
+#X connect 12 3 65 0;
+#X connect 12 4 65 0;
 #X connect 13 0 19 0;
 #X connect 14 0 13 0;
 #X connect 15 0 18 0;
@@ -111,7 +128,7 @@
 #X connect 37 0 29 1;
 #X connect 38 0 22 0;
 #X connect 38 0 21 0;
-#X connect 39 0 40 0;
+#X connect 39 0 56 0;
 #X connect 40 0 21 0;
 #X connect 40 0 22 0;
 #X connect 41 0 27 1;
@@ -120,7 +137,7 @@
 #X connect 43 0 39 0;
 #X connect 44 0 35 0;
 #X connect 45 0 10 0;
-#X connect 46 0 12 0;
+#X connect 46 0 55 0;
 #X connect 47 0 14 0;
 #X connect 47 1 40 0;
 #X connect 47 2 43 0;
@@ -129,12 +146,20 @@
 #X connect 51 0 47 0;
 #X connect 52 0 51 0;
 #X connect 54 0 25 0;
+#X connect 55 0 12 0;
+#X connect 56 0 55 0;
+#X connect 56 1 40 0;
+#X connect 58 0 57 0;
+#X connect 62 0 1 0;
+#X connect 63 0 1 0;
+#X connect 64 0 1 0;
+#X connect 65 0 51 0;
 #X coords 0 -1 1 1 160 160 1 0 0;
 #X restore 108 599 pd videos;
 #X obj 887 63 tgl 15 0 s-all-on-all r-all-on-all empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X text 780 61 all on all TVs;
-#N canvas 326 198 1053 693 guts 1;
+#N canvas 419 298 1053 693 guts 1;
 #X text 693 17 send to all machines;
 #N canvas 262 63 801 547 sendin 0;
 #X obj 120 5 r totalTVs;
