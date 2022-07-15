@@ -94,12 +94,12 @@
 #X connect 9 0 4 0;
 #X connect 9 0 5 0;
 #X restore 822 152 pd testVid640x480;
-#N canvas 657 178 676 213 gemwinMagic 0;
+#N canvas 657 178 676 213 gemwinMagic 1;
 #X msg 206 69 0 \, destroy;
 #X obj 38 9 loadbang;
 #X obj 15 106 gemwin 60;
-#X msg 38 36 title Gem \, dimen 640 480 \, border 1 \, create \, 1
-;
+#X msg 38 36 title Gem \, dimen 640 480 \, border 1 \, cursor 0 \,
+create \, 1;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
