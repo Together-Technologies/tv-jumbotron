@@ -1,22 +1,22 @@
 #N canvas 337 1230 1269 835 12;
 #X obj 27 169 hsl 128 15 0.1 12 0 0 \$1-s-dimX-slider \$1-r-dimX-slider
-empty -2 -8 0 10 -262144 -1 -1 5200 1;
+empty -2 -8 0 10 -262144 -1 -1 3400 1;
 #X obj 157 37 vsl 15 128 0.1 16 0 0 \$1-s-offsetY-slider \$1-r-offsetY-slider
-empty 0 -9 0 10 -262144 -1 -1 9800 1;
+empty 0 -9 0 10 -262144 -1 -1 6100 1;
 #X obj 8 38 vsl 15 128 0.1 16 0 0 \$1-s-dimY-slider \$1-r-dimY-slider
-empty 0 -9 0 10 -262144 -1 -1 9400 1;
+empty 0 -9 0 10 -262144 -1 -1 10600 1;
 #X obj 26 19 hsl 128 15 0.1 12 0 0 \$1-s-offsetX-slider \$1-r-offsetX-slider
-empty -2 -8 0 10 -262144 -1 -1 4900 1;
+empty -2 -8 0 10 -262144 -1 -1 3600 1;
 #X text 56 34 offsetX;
 #X text 100 66 offsetY;
 #X obj 59 54 nbx 5 14 0.1 12 0 0 \$1-s-offsetX-num \$1-r-offsetX-num
-empty 0 -8 0 10 -262144 -1 -1 4.69134 256;
+empty 0 -8 0 10 -262144 -1 -1 3.47323 256;
 #X obj 99 85 nbx 5 14 0.1 16 0 0 \$1-s-offsetY-num \$1-r-offsetY-num
-empty 0 -8 0 10 -262144 -1 -1 12.3693 256;
+empty 0 -8 0 10 -262144 -1 -1 7.73701 256;
 #X obj 26 86 nbx 5 14 0.1 16 0 0 \$1-s-dimY-num \$1-r-dimY-num empty
-0 -8 0 10 -262144 -1 -1 11.8685 256;
+0 -8 0 10 -262144 -1 -1 13.3709 256;
 #X obj 58 136 nbx 5 14 0.1 12 0 0 \$1-s-dimX-num \$1-r-dimX-num empty
-0 -8 0 10 -262144 -1 -1 4.97244 256;
+0 -8 0 10 -262144 -1 -1 3.28583 256;
 #X text 24 68 dimY;
 #X text 66 150 dimX;
 #X obj 377 400 spigot 1;
@@ -73,7 +73,7 @@ empty 0 -8 0 10 -262144 -1 -1 12.3693 256;
 #X obj 1082 768 s \$1-r-offsetY-slider;
 #X obj 948 409 loadbang;
 #X obj 119 107 knob 32 32 -185 175 0 0 \$1-s-rotate-knob \$1-r-rotate-knob
-empty 0 -8 0 8 -2.22649e+08 21915 -2.22649e+08 1593 1;
+empty 0 -8 0 8 1.64424e+09 21913 1.64424e+09 1593 1;
 #X floatatom 118 145 5 -180 180 0 - #1-r-rotate-num #1-s-rotate-num
 ;
 #X text 68 111 rotate;
@@ -129,10 +129,11 @@ empty 0 -8 0 8 -2.22649e+08 21915 -2.22649e+08 1593 1;
 #X obj 677 188 r totalXInches;
 #X obj 784 188 r totalYInches;
 #X obj 51 211 spigot 1;
-#X obj 109 150 r s-all-on-all;
-#X obj 106 179 == 0;
+#X obj 114 130 r s-all-on-all;
+#X obj 111 159 == 0;
 #X obj 656 105 r s-all-on-all;
 #X obj 656 134 select 1;
+#X obj 109 183 t b f;
 #X connect 0 0 16 0;
 #X connect 1 0 15 0;
 #X connect 2 0 17 0;
@@ -172,9 +173,11 @@ empty 0 -8 0 8 -2.22649e+08 21915 -2.22649e+08 1593 1;
 #X connect 30 0 28 2;
 #X connect 31 0 5 0;
 #X connect 32 0 33 0;
-#X connect 33 0 31 1;
+#X connect 33 0 36 0;
 #X connect 34 0 35 0;
 #X connect 35 0 25 0;
+#X connect 36 0 12 0;
+#X connect 36 1 31 1;
 #X restore 1085 232 pd send;
 #X obj 947 457 delay 1000;
 #X connect 12 0 18 0;
