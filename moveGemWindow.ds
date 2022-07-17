@@ -1,0 +1,1 @@
+(if (is (application_name) "Gem")(begin (above) (undecorate) (geometry "640x480+0+0")))
