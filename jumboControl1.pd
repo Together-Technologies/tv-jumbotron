@@ -1,4 +1,5 @@
-#N canvas 890 1222 924 801 12;
+#N canvas 274 63 929 639 12;
+#X declare -lib Gem;
 #X obj 9 15 control 1;
 #X obj 196 15 control 2;
 #X obj 379 15 control 3;
@@ -10,12 +11,12 @@
 #X text 746 133 total inchesX;
 #X text 747 159 total inchesY;
 #X obj 847 112 nbx 5 14 0 16 0 1 totalTVs empty empty 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 2 256;
 #X obj 847 137 nbx 5 14 0 500 0 1 totalXInches empty empty 0 -8 0 10
 -262144 -1 -1 12 256;
 #X obj 847 162 nbx 5 14 0 500 0 1 totalYInches empty empty 0 -8 0 10
 -262144 -1 -1 16 256;
-#N canvas 286 1222 1190 793 videos 1;
+#N canvas 60 170 1190 793 videos 1;
 #X msg 173 311 horse.mp4;
 #X obj 181 429 t b a;
 #X obj 226 519 s fileName;
@@ -26,7 +27,7 @@
 #X obj 1000 294 s frameNum;
 #X obj 226 487 symbol;
 #X obj 3 29 vradio 15 1 0 8 s-vidToPlay empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 2;
 #X obj 117 234 select 0 1 2 3 4 5 6;
 #X text 23 41 horse;
 #X obj 602 212 select 0 1 2 3 4 5 6;
@@ -66,10 +67,10 @@
 #X obj 602 156 r s-vidToPlay;
 #X obj 679 347 t a b b;
 #X msg 54 309 commercials.mp4;
-#X msg 558 303 commercials.wav;
+#X msg 568 277 commercials.wav;
 #X text 23 25 commercials;
 #X obj 679 324 symbol;
-#X msg 677 301 horse.wav;
+#X msg 698 293 horse.wav;
 #X obj 169 5 table audioBuffer;
 #X msg 1057 626 0 \, destroy;
 #X obj 602 184 int;
@@ -77,12 +78,21 @@
 #X msg 420 165 \; pd dsp 1;
 #X obj 421 119 loadbang;
 #X text 22 56 coarse;
-#X text 24 71 medium;
-#X text 25 87 fine;
+#X text 23 71 medium;
+#X text 22 87 fine;
 #X msg 250 312 coarse.mp4;
 #X msg 282 340 medium.mp4;
 #X msg 294 375 fine.mp4;
 #X msg 681 260 coarse.wav;
+#X msg 374 312 aquarium.mp4;
+#X msg 376 338 fire.mp4;
+#X msg 376 364 beach.mp4;
+#X text 22 100 aquarium;
+#X text 23 115 fire;
+#X text 22 131 beach;
+#X msg 474 225 aquarium.wav;
+#X msg 476 251 fire.wav;
+#X msg 476 277 beach.wav;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 1 8 0;
@@ -93,11 +103,17 @@
 #X connect 10 2 62 0;
 #X connect 10 3 63 0;
 #X connect 10 4 64 0;
+#X connect 10 5 66 0;
+#X connect 10 6 67 0;
+#X connect 10 7 68 0;
 #X connect 12 0 49 0;
 #X connect 12 1 52 0;
 #X connect 12 2 65 0;
 #X connect 12 3 65 0;
 #X connect 12 4 65 0;
+#X connect 12 5 72 0;
+#X connect 12 6 73 0;
+#X connect 12 7 74 0;
 #X connect 13 0 19 0;
 #X connect 14 0 13 0;
 #X connect 15 0 18 0;
@@ -154,14 +170,20 @@
 #X connect 63 0 1 0;
 #X connect 64 0 1 0;
 #X connect 65 0 51 0;
+#X connect 66 0 1 0;
+#X connect 67 0 1 0;
+#X connect 68 0 1 0;
+#X connect 72 0 51 0;
+#X connect 73 0 51 0;
+#X connect 74 0 51 0;
 #X coords 0 -1 1 1 160 160 1 0 0;
-#X restore 108 599 pd videos;
+#X restore 757 190 pd videos;
 #X obj 887 63 tgl 15 0 s-all-on-all r-all-on-all empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X text 780 61 all on all TVs;
-#N canvas 419 298 1053 693 guts 1;
+#N canvas 312 60 1053 672 guts 0;
 #X text 693 17 send to all machines;
-#N canvas 262 63 801 547 sendin 0;
+#N canvas 993 382 801 547 sendin 0;
 #X obj 120 5 r totalTVs;
 #X obj 34 171 int 1;
 #X obj 23 216 until;
@@ -242,4 +264,5 @@
 #X obj 694 38 sendout totalXInches totalYInches 3002 0;
 #X obj 694 62 sendout fileName fileType 3003 1;
 #X obj 694 86 sendout frameNum dummy 3004 0;
+#X obj 309 73 declare -lib Gem;
 #X restore 843 6 pd guts;
