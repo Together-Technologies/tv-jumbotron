@@ -1,4 +1,5 @@
-#N canvas 135 201 924 801 12;
+#N canvas 274 72 924 801 12;
+#X declare -lib Gem;
 #X obj 9 15 control 1;
 #X obj 196 15 control 2;
 #X obj 379 15 control 3;
@@ -21,7 +22,7 @@
 #X obj 226 519 s fileName;
 #X obj 116 499 s fileType;
 #X msg 117 470 video;
-#X floatatom 118 45 5 0 0 0 - frameNum -;
+#X floatatom 118 45 5 0 0 0 - frameNum -, f 5;
 #X text 115 25 frame;
 #X obj 1000 294 s frameNum;
 #X obj 226 487 symbol;
@@ -159,7 +160,7 @@
 #X obj 887 63 tgl 15 0 s-all-on-all r-all-on-all empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X text 780 61 all on all TVs;
-#N canvas 857 317 1053 693 guts 0;
+#N canvas 446 72 1053 693 guts 1;
 #X text 693 17 send to all machines;
 #N canvas 993 382 801 547 sendin 0;
 #X obj 120 5 r totalTVs;
@@ -242,4 +243,5 @@
 #X obj 694 38 sendout totalXInches totalYInches 3002 0;
 #X obj 694 62 sendout fileName fileType 3003 1;
 #X obj 694 86 sendout frameNum dummy 3004 0;
+#X obj 309 73 declare -lib Gem;
 #X restore 843 6 pd guts;
