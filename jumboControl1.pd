@@ -1,21 +1,21 @@
-#N canvas 890 1222 924 801 12;
+#N canvas 276 164 924 801 12;
 #X obj 9 15 control 1;
 #X obj 196 15 control 2;
 #X obj 379 15 control 3;
 #X obj 566 15 control 4;
-#X obj 886 87 tgl 15 1 debug empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 886 87 tgl 15 1 debug empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 842 84 debug;
 #X text 773 109 total TVs;
 #X text 746 133 total inchesX;
 #X text 747 159 total inchesY;
 #X obj 847 112 nbx 5 14 0 16 0 1 totalTVs empty empty 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 2 256;
 #X obj 847 137 nbx 5 14 0 500 0 1 totalXInches empty empty 0 -8 0 10
 -262144 -1 -1 12 256;
 #X obj 847 162 nbx 5 14 0 500 0 1 totalYInches empty empty 0 -8 0 10
 -262144 -1 -1 16 256;
-#N canvas 286 1222 1190 793 videos 1;
+#N canvas 60 170 1190 793 videos 0;
 #X msg 173 311 horse.mp4;
 #X obj 181 429 t b a;
 #X obj 226 519 s fileName;
@@ -26,7 +26,7 @@
 #X obj 1000 294 s frameNum;
 #X obj 226 487 symbol;
 #X obj 3 29 vradio 15 1 0 8 s-vidToPlay empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 2;
 #X obj 117 234 select 0 1 2 3 4 5 6;
 #X text 23 41 horse;
 #X obj 602 212 select 0 1 2 3 4 5 6;
@@ -159,9 +159,9 @@
 #X obj 887 63 tgl 15 0 s-all-on-all r-all-on-all empty 17 7 0 10 -262144
 -1 -1 0 1;
 #X text 780 61 all on all TVs;
-#N canvas 419 298 1053 693 guts 1;
+#N canvas 857 317 1053 693 guts 0;
 #X text 693 17 send to all machines;
-#N canvas 262 63 801 547 sendin 0;
+#N canvas 993 382 801 547 sendin 0;
 #X obj 120 5 r totalTVs;
 #X obj 34 171 int 1;
 #X obj 23 216 until;
