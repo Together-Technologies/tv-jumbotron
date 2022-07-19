@@ -4,6 +4,7 @@ cd /home/user/Desktop/tv-jumbotron
 /usr/bin/xset s 0 0
 /usr/bin/xset s noblank
 /usr/bin/xrandr --output VGA-0 --mode 640x480 --pos 0x0 --rotate normal --output LVDS-0 --mode 1600x900 --pos 640x0 --rotate normal
+/usr/bin/xrandr --output VGA-1-1 --mode 640x480 --pos 0x0 --rotate normal
 /usr/bin/pd rTest.pd &
 sleep 5
 /usr/bin/devilspie &
