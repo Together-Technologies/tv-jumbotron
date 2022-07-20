@@ -1,9 +1,9 @@
-#N canvas 1 63 1202 639 12;
+#N canvas 246 1341 1202 639 12;
 #X declare -lib Gem;
-#X obj 9 15 control 1;
-#X obj 196 15 control 2;
-#X obj 379 15 control 3;
-#X obj 566 15 control 4;
+#X obj 188 426 control 1;
+#X obj 56 213 control 2;
+#X obj 409 14 control 3;
+#X obj 301 223 control 4;
 #X obj 1166 87 tgl 15 1 debug empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 1122 84 debug;
@@ -13,16 +13,16 @@
 #X obj 1127 112 nbx 5 14 0 16 0 1 totalTVs empty empty 0 -8 0 10 -262144
 -1 -1 12 256;
 #X obj 1127 137 nbx 5 14 0 500 0 1 totalXInches empty empty 0 -8 0
-10 -262144 -1 -1 12 256;
+10 -262144 -1 -1 80 256;
 #X obj 1127 162 nbx 5 14 0 500 0 1 totalYInches empty empty 0 -8 0
-10 -262144 -1 -1 16 256;
-#N canvas 60 60 1190 672 videos 1;
+10 -262144 -1 -1 60 256;
+#N canvas 317 1342 1190 672 videos 0;
 #X msg 173 311 horse.mp4;
 #X obj 181 429 t b a;
 #X obj 226 519 s fileName;
 #X obj 116 499 s fileType;
 #X msg 117 470 video;
-#X floatatom 118 45 5 0 0 0 - frameNum -, f 5;
+#X floatatom 118 45 5 0 0 0 - frameNum -;
 #X text 115 25 frame;
 #X obj 1000 294 s frameNum;
 #X obj 226 487 symbol;
@@ -266,11 +266,11 @@
 #X obj 694 86 sendout frameNum dummy 3004 0;
 #X obj 309 73 declare -lib Gem;
 #X restore 1123 6 pd guts;
-#X obj 26 233 control 5;
-#X obj 218 233 control 6;
-#X obj 422 239 control 7;
-#X obj 630 240 control 8;
-#X obj 23 430 control 9;
-#X obj 218 433 control 10;
-#X obj 427 441 control 11;
-#X obj 641 448 control 12;
+#X obj 778 216 control 5;
+#X obj 556 224 control 6;
+#X obj 676 426 control 7;
+#X obj 810 10 control 8;
+#X obj 9 9 control 9;
+#X obj 412 426 control 10;
+#X obj 206 12 control 11;
+#X obj 606 13 control 12;
