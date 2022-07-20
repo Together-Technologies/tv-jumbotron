@@ -1,4 +1,4 @@
-#N canvas 432 1315 1202 639 12;
+#N canvas 95 71 1202 639 12;
 #X declare -lib Gem;
 #X obj 188 426 control 1;
 #X obj 56 213 control 2;
@@ -22,12 +22,12 @@
 #X obj 226 519 s fileName;
 #X obj 116 499 s fileType;
 #X msg 117 470 video;
-#X floatatom 118 35 5 0 0 0 - frameNum -;
+#X floatatom 118 35 5 0 0 0 - frameNum -, f 5;
 #X text 115 15 frame;
 #X obj 1000 294 s frameNum;
 #X obj 226 487 symbol;
 #X obj 3 19 vradio 15 1 0 9 s-vidToPlay empty empty 0 -8 0 10 -262144
--1 -1 7;
+-1 -1 4;
 #X text 23 31 horse;
 #X obj 598 401 soundfiler;
 #X obj 637 636 tabread4~ audioBuffer;
