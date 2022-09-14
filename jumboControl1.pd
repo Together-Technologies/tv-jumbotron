@@ -1,4 +1,4 @@
-#N canvas 569 104 1202 639 12;
+#N canvas 569 104 1236 639 12;
 #X declare -lib Gem;
 #X obj 188 426 control 1;
 #X obj 56 213 control 2;
@@ -16,8 +16,8 @@
 10 -262144 -1 -1 80 256;
 #X obj 1127 162 nbx 5 14 0 500 0 1 totalYInches empty empty 0 -8 0
 10 -262144 -1 -1 60 256;
-#N canvas 175 63 1306 850 videos 0;
-#X floatatom 118 35 5 0 0 0 - frameNum -;
+#N canvas 175 63 1306 850 videos 1;
+#X floatatom 103 35 7 0 0 0 - frameNum -;
 #X text 115 15 frame;
 #X obj 1000 180 s frameNum;
 #X obj 3 19 vradio 15 1 0 14 s-vidToPlay r-vidToPlay empty 0 -8 0 10
@@ -170,7 +170,7 @@
 #X msg 493 349 0;
 #X obj 522 433 t b f;
 #X text 22 167 head;
-#N canvas 1184 1308 487 625 videoList 0;
+#N canvas 1184 1308 487 625 videoList 1;
 #X msg 136 109 horse.mp4;
 #X obj 117 482 t b a;
 #X obj 162 572 s fileName;
