@@ -18,14 +18,19 @@
 ## Outline for creating live video:
   * audio is already on all players and control for live0 through live9
   * control is listening on a socket for filename representing to play video now
-  * when control gets message plays video then goes back to commercials
-  
+  * when control gets message plays video then goes back to commercials 
+  * remote will print channel numbers even tho they are all the same channel
+  * do not update channel number when playing live video
+ 
 ## Steps for creating live video:
   * create the video
   * ssh video to all the video players and the main computer
   * send msg to control computer to play video
   * loop filenames between 0 and 9 (save only 10)
-
+  
 ## Todo
   * copy comm80.mp4 and comm80.wav to all the machines
-  
+
+## Pd logic
+  * channels 0 through 9
+  * 
